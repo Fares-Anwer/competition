@@ -1,4 +1,4 @@
 <?php
-    $namea = readline();
-    echo $namea; 
+    $name = readline();
+    echo $name; 
 ?>
