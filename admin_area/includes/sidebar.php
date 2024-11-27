@@ -9,11 +9,15 @@ $admin_image = $get_admin->admin_image;
 
 $dashboard = (isset($_GET['dashboard'])) ? 'active' : '';
 
-$enevts = (isset($_GET['add_enevt']) || isset($_GET['view_enevts']) || isset($_GET['edit_enevt']) || isset($_GET['Unapprove_enevt'])) ? 'active' : '';
-$add_enevt = (isset($_GET['add_enevt'])) ? 'active' : '';
-$view_enevts = (isset($_GET['view_enevts'])) ? 'active' : '';
-$unapprove_enevt = (isset($_GET['Unapprove_enevt'])) ? 'active' : '';
+$products = (isset($_GET['add_product']) || isset($_GET['view_products']) || isset($_GET['edit_product']) || isset($_GET['Unapprove_product'])) ? 'active' : '';
+$add_product = (isset($_GET['add_product'])) ? 'active' : '';
+$view_products = (isset($_GET['view_products'])) ? 'active' : '';
+$unapprove_product = (isset($_GET['Unapprove_product'])) ? 'active' : '';
 
+
+$cats = (isset($_GET['add_cat']) || isset($_GET['view_cats']) || isset($_GET['edit_cat'])) ? 'active' : '';
+$add_cat = (isset($_GET['add_cat'])) ? 'active' : '';
+$view_cats = (isset($_GET['view_cats'])) ? 'active' : '';
 
 $slides = (isset($_GET['add_slide']) || isset($_GET['view_slides']) || isset($_GET['edit_slide'])) ? 'active' : '';
 $add_slide = (isset($_GET['add_slide'])) ? 'active' : '';
@@ -21,18 +25,35 @@ $view_slides = (isset($_GET['view_slides'])) ? 'active' : '';
 
 $view_customers = (isset($_GET['view_customers'])) ? 'active' : '';
 
+$view_orders = (isset($_GET['view_orders'])) ? 'active' : '';
 
+$view_payments = (isset($_GET['view_payments'])) ? 'active' : '';
 
 $users = (isset($_GET['add_user']) || isset($_GET['view_users']) || isset($_GET['edit_user'])) ? 'active' : '';
 $add_user = (isset($_GET['add_user'])) ? 'active' : '';
 $view_users = (isset($_GET['view_users'])) ? 'active' : '';
 
+$boxes = (isset($_GET['add_box']) || isset($_GET['view_boxes']) || isset($_GET['edit_box'])) ? 'active' : '';
+$add_box = (isset($_GET['add_box'])) ? 'active' : '';
+$view_boxes = (isset($_GET['view_boxes'])) ? 'active' : '';
 
+$coupons = (isset($_GET['add_coupon']) || isset($_GET['view_coupons']) || isset($_GET['edit_coupon'])) ? 'active' : '';
+$add_coupon = (isset($_GET['add_coupon'])) ? 'active' : '';
+$view_coupons = (isset($_GET['view_coupons'])) ? 'active' : '';
 
+$services = (isset($_GET['add_service']) || isset($_GET['view_services']) || isset($_GET['edit_service'])) ? 'active' : '';
+$add_service = (isset($_GET['add_service'])) ? 'active' : '';
+$view_services = (isset($_GET['view_services'])) ? 'active' : '';
+
+$edit_css = (isset($_GET['edit_css'])) ? 'active' : '';
 
 $edit_contact_us = (isset($_GET['edit_contact_us'])) ? 'active' : '';
 
 $edit_about_us = (isset($_GET['edit_about_us'])) ? 'active' : '';
+
+$enquiry_types = (isset($_GET['add_enquiry_type']) || isset($_GET['view_enquiry_types']) || isset($_GET['edit_enquiry_type'])) ? 'active' : '';
+$add_enquiry_type = (isset($_GET['add_enquiry_type'])) ? 'active' : '';
+$view_enquiry_types = (isset($_GET['view_enquiry_types'])) ? 'active' : '';
 
 
 ?>
@@ -57,19 +78,19 @@ $edit_about_us = (isset($_GET['edit_about_us'])) ? 'active' : '';
             </li>
 
             <li class="heading">FEATURES</li>
-            <li class="<?php echo $enevts; ?>">
-                <a href="javascript:;"><i class="sidebar-item-icon fab fa-enevt-hunt"></i>
-                    <span class="nav-label">enevts</span><i class="fa fa-angle-left arrow"></i>
+            <li class="<?php echo $products; ?>">
+                <a href="javascript:;"><i class="sidebar-item-icon fab fa-product-hunt"></i>
+                    <span class="nav-label">Products</span><i class="fa fa-angle-left arrow"></i>
                 </a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a class="<?php echo $add_enevt; ?>" href="index.php?add_enevt"><i class="fas fa-plus-circle"></i> Insert enevt</a>
+                        <a class="<?php echo $add_product; ?>" href="index.php?add_product"><i class="fas fa-plus-circle"></i> Insert Product</a>
                     </li>
                     <li>
-                        <a class="<?php echo $view_enevts; ?>" href="index.php?view_enevts"><i class="fas fa-eye"></i> View Approve enevts</a>
+                        <a class="<?php echo $view_products; ?>" href="index.php?view_products"><i class="fas fa-eye"></i> View Approve Products</a>
                     </li>
                     <li>
-                        <a class="<?php echo $unapprove_enevt; ?>" href="index.php?Unapprove_enevt"><i class="fas fa-eye-slash"></i> View Unapprove enevts</a>
+                        <a class="<?php echo $unapprove_product; ?>" href="index.php?Unapprove_product"><i class="fas fa-eye-slash"></i> View Unapprove Products</a>
                     </li>
                 </ul>
             </li>
