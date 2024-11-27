@@ -1,10 +1,19 @@
 <?php
 
-$get_enevts = $getFromU->viewAllFromTable("artwork");
-$count_enevts = count($get_enevts);
+$get_products = $getFromU->viewAllFromTable("artwork");
+$count_products = count($get_products);
 
 $get_customers = $getFromU->viewAllFromTable("customers");
 $count_customers = count($get_customers);
+
+$get_product_categories = $getFromU->viewAllFromTable("categories");
+$count_product_categories = count($get_product_categories);
+
+$get_pending_orders = $getFromU->viewAllFromTableWhereOrderStatus("pending_orders", "pending");
+$count_pending_orders = count($get_pending_orders);
+
+
+
 ?>
 
 
@@ -50,8 +59,8 @@ $count_customers = count($get_customers);
     <div class="col-lg-3 col-md-6">
       <div class="ibox bg-info color-white widget-stat rounded">
         <div class="ibox-body">
-          <h2 class="m-b-5 font-strong"><?php echo $count_enevts; ?></h2>
-          <div class="m-b-5">enevtS</div><a class="text-white" href="index.php?view_enevts"><i class="fas fa-clipboard-check widget-stat-icon"></i></a>
+          <h2 class="m-b-5 font-strong"><?php echo $count_products; ?></h2>
+          <div class="m-b-5">PRODUCTS</div><a class="text-white" href="index.php?view_products"><i class="fas fa-clipboard-check widget-stat-icon"></i></a>
           <div><i class="fa fa-level-up m-r-5"></i><small>17% higher</small></div>
         </div>
       </div>
@@ -59,7 +68,7 @@ $count_customers = count($get_customers);
     <div class="col-lg-3 col-md-6">
       <div class="ibox bg-warning color-white widget-stat rounded">
         <div class="ibox-body">
-          <h2 class="m-b-5 font-strong"><?php echo $count_enevt_categories; ?></h2>
+          <h2 class="m-b-5 font-strong"><?php echo $count_product_categories; ?></h2>
           <div class="m-b-5">CATEGORIES</div><a class="text-white" href="index.php?view_cats"><i class="fas fa-list-ul widget-stat-icon"></i></a>
           <div><i class="fa fa-level-up m-r-5"></i><small>22% higher</small></div>
         </div>
@@ -98,7 +107,7 @@ $count_customers = count($get_customers);
                 <th>Order ID</th>
                 <th>Customer Name</th>
                 <th>Invoice No</th>
-                <th>enevt ID</th>
+                <th>Product ID</th>
                 <th>Qty</th>
                 <th>Status</th>
               </tr>
@@ -111,7 +120,7 @@ $count_customers = count($get_customers);
                 $order_id = $get_order->order_id;
                 $customer_id = $get_order->customer_id;
                 $invoice_no = $get_order->invoice_no;
-                $enevt_id = $get_order->enevt_id;
+                $product_id = $get_order->product_id;
                 $qty = $get_order->qty;
                 $order_status = $get_order->order_status;
 
@@ -123,7 +132,7 @@ $count_customers = count($get_customers);
                   <td>#<?php echo $i; ?></td>
                   <td><?php echo ucwords($customer_name); ?></td>
                   <td><a href="invoice.php?invoice_id=<?php echo $invoice_no; ?>"><?php echo $invoice_no; ?></a></td>
-                  <td><?php echo $enevt_id; ?></td>
+                  <td><?php echo $product_id; ?></td>
                   <td><?php echo $qty; ?></td>
                   <td>
                     <span class="w-100 badge <?php ($order_status === 'pending') ? print 'badge-danger' : print 'badge-success'; ?>"> <?php echo ucwords($order_status); ?></span>
@@ -196,7 +205,7 @@ $count_customers = count($get_customers);
           </ul>
         </div>
         <div class="ibox-footer text-center">
-          <a href="index.php?view_enevts">View All enevts</a>
+          <a href="index.php?view_products">View All Products</a>
         </div>
       </div>
     </div>
