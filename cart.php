@@ -64,14 +64,6 @@ if (isset($_POST['apply_coupon'])) {
 				<a class="nav-link text-light" href="index.php">Home </a>
 			</li>
 
-			<?php if (isset($_SESSION['customer_email'])): ?>
-				<li><a class="nav-link text-light" href="customer/my_account.php?my_orders">My Account</a></li>
-			<?php else: ?>
-				<li><a class="nav-link text-light" href="checkout.php">My Account</a></li>
-			<?php endif ?>
-			<li>
-				<a class="nav-link text-light" href="cart.php">Shopping Cart</a>
-			</li>
 			<li>
 				<a class="nav-link text-light" href="contact.php">Contact Us</a>
 			</li>
@@ -129,7 +121,6 @@ if (isset($_POST['apply_coupon'])) {
 			<div class="col-md-9">
 				<div class="card mb-3">
 					<div class="card-body">
-						<h5 class="card-title">Shopping Cart</h5>
 						<form method="post" action="cart.php" enctype="multipart/form-data">
 							<div class="table-responsive mb-3">
 								<table class="table table-bordered table-hover text-center">

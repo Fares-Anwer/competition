@@ -5,10 +5,8 @@
 			<div class="col-sm-6 col-md-3 mb-4">
 				<h4 class="text-uppercase">Pages</h4>
 				<ul class="list-unstyled">
-					<li><a href="cart.php" class="text-light">Shopping Cart</a></li>
 					<li><a href="contact.php" class="text-light">Contact Us</a></li>
 					<li><a href="shop.php" class="text-light">Shop</a></li>
-					<li><a href="checkout.php" class="text-light">My Account</a></li>
 				</ul>
 				<hr class="border-light">
 				<h4 class="text-uppercase">User Section</h4>

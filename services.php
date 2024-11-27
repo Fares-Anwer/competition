@@ -10,14 +10,6 @@
 				<a class="nav-link text-light" href="index.php">Home </a>
 			</li>
 
-			<?php if (isset($_SESSION['customer_email'])): ?>
-				<li><a class="nav-link text-light" href="customer/my_account.php?my_orders">My Account</a></li>
-			<?php else: ?>
-				<li><a class="nav-link text-light" href="checkout.php">My Account</a></li>
-			<?php endif ?>
-			<li>
-				<a class="nav-link text-light" href="cart.php">Shopping Cart</a>
-			</li>
 			<li>
 				<a class="nav-link text-light" href="contact.php">Contact Us</a>
 			</li>
