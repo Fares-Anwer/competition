@@ -1,2 +1,0 @@
-# competition
-for sanaa competition
