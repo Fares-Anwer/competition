@@ -39,7 +39,9 @@
 
 
 				<div class="col-md-6 offer"> <!-- col-md-6 offer Starts -->
-					<object type="image/svg+xml" data="includes/logo2.svg" style="direction:abslute;" class="logo"></object>
+					<!-- <object type="image/svg+xml"  class="img-thumbnail" style="direction:abslute;  width: 50px; height: 50px;" class="logo"> -->
+						<div class="h1" style="direction:abslute;  width: 100px; height: 50px;" class="logo">Organizing events</div>
+					<!-- </object> -->
 					<a href="customer/my_account.php" class="btn btn-info btn-sm">
 						<?php
 						// if (!isset($_SESSION['customer_email'])) {
