@@ -48,7 +48,7 @@ if (isset($_POST['update_enevt'])) {
 
 	move_uploaded_file($temp_name1, "enevt_images/$enevt_img1");
 
-	$update_enevt = $getFromU->update_enevt("artwork", $enevt_id, array("cat_id" => $cat_id, "add_date" => date("Y-m-d H:i:s"), "enevt_title" => $enevt_title, "enevt_img1" => $enevt_img1, "enevt_price" => $enevt_price, "enevt_psp_price" => $enevt_psp_price, "enevt_desc" => $enevt_desc, "enevt_keywords" => $enevt_keywords, "enevt_label" => $enevt_label, "status" => $status));
+	$update_enevt = $getFromU->update_enevt("events", $enevt_id, array("cat_id" => $cat_id, "add_date" => date("Y-m-d H:i:s"), "enevt_title" => $enevt_title, "enevt_img1" => $enevt_img1, "enevt_price" => $enevt_price, "enevt_psp_price" => $enevt_psp_price, "enevt_desc" => $enevt_desc, "enevt_keywords" => $enevt_keywords, "enevt_label" => $enevt_label, "status" => $status));
 
 	if ($update_enevt) {
 		$_SESSION['enevt_update_msg'] = "enevt has been Updated Sucessfully";

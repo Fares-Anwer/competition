@@ -7,7 +7,7 @@ $admin_id = $get_admin->admin_id;
 $admin_name = $get_admin->admin_name;
 $admin_image = $get_admin->admin_image;
 
-$get_enevts = $getFromU->viewAllFromTable("artwork");
+$get_enevts = $getFromU->viewAllFromTable("events");
 $count_enevts = count($get_enevts);
 
 $get_customers = $getFromU->viewAllFromTable("customers");

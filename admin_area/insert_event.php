@@ -10,7 +10,7 @@ if (isset($_POST['submit'])) {
 
 	move_uploaded_file($temp_name1, "enevt_images/$enevt_img1");
 
-	$insert_enevt = $getFromU->create("artwork", array("enevt_id " => $cat_id, "add_date" => date("Y-m-d H:i:s"), "event_name" => $enevt_title, "enevt_img1" => $enevt_img1,   "enevt_desc" => $enevt_desc));
+	$insert_enevt = $getFromU->create("events", array("enevt_id " => $cat_id, "add_date" => date("Y-m-d H:i:s"), "event_name" => $enevt_title, "enevt_img1" => $enevt_img1,   "enevt_desc" => $enevt_desc));
 
 	if ($insert_enevt) {
 		echo '<script>alert("enevt has been added Sucessfully")</script>';

@@ -52,7 +52,7 @@
 		<ul class="pagination mx-auto">
 
 			<?php
-			$total_pages = $getFromU->countPages("artwork", $per_page);
+			$total_pages = $getFromU->countPages("events", $per_page);
 			if ($total_pages >= 2) {
 			?>
 				<li class="page-item <?php if ($_GET['page'] == 1) {
