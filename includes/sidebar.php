@@ -14,7 +14,7 @@ if (isset($_REQUEST['man']) && is_array($_REQUEST['man'])) {
 }
 
 // / Manufacturers Code Ends ///
-// / Products Categories Code Starts ///
+// / events Categories Code Starts ///
 
 if (isset($_REQUEST['p_cat']) && is_array($_REQUEST['p_cat'])) {
   foreach ($_REQUEST['p_cat'] as $sKey => $sVal) {
@@ -24,7 +24,7 @@ if (isset($_REQUEST['p_cat']) && is_array($_REQUEST['p_cat'])) {
   }
 }
 
-// / Products Categories Code Ends ///
+// / events Categories Code Ends ///
 // / Categories Code Starts ///
 
 if (isset($_REQUEST['cat']) && is_array($_REQUEST['cat'])) {
@@ -110,61 +110,7 @@ if (isset($_REQUEST['cat']) && is_array($_REQUEST['cat'])) {
         </div>
       </div>
     </div>
-    <div class="card-body scroll-menu">
-      <ul class="nav nav-pills nav-stacked category-menu" id="dev-cats">
-        <?php
-        $get_catagories = $getFromU->selectTopCatagories();
-        foreach ($get_catagories as $get_catagory) {
-          $cat_id = $get_catagory->cat_id;
-          $cat_title = $get_catagory->cat_title;
-          $cat_image = $get_catagory->cat_image;
 
-          if ($cat_image == "") {
-          } else {
-            $cat_image = " <img src='admin_area/other_images/$cat_image' width='20px' height='20px'> &nbsp;";
-          }
-        ?>
-
-          <li class="checkbox checkbox-primary form-control mb-2 bg-light">
-            <a>
-              <div class="custom-control custom-checkbox mr-sm-2" style="top: 15px">
-                <input type="checkbox" <?php (isset($aCat[$cat_id])) ? print "checked='checked' " : ""; ?> name="cat" value="<?php echo $cat_id; ?>" class="custom-control-input get_cat" id="cat[<?php echo $cat_id; ?>]">
-                <label class="custom-control-label" for="cat[<?php echo $cat_id; ?>]"><span><?php echo $cat_image; ?></span> <span><?php echo $cat_title; ?></span><br></label>
-              </div>
-            </a>
-
-          </li>
-
-        <?php   } ?>
-
-        <?php
-        $get_catagories = $getFromU->selectNonTopCatagories();
-        foreach ($get_catagories as $get_catagory) {
-          $cat_id = $get_catagory->cat_id;
-          $cat_title = $get_catagory->cat_title;
-          $cat_image = $get_catagory->cat_image;
-
-          if ($cat_image == "") {
-          } else {
-            $cat_image = " <img src='admin_area/other_images/$cat_image' width='20px' height='20px'> &nbsp;";
-          }
-        ?>
-
-          <li class="form-control mb-2 bg-light">
-            <a>
-              <div class="custom-control custom-checkbox mr-sm-2" style="top: 15px">
-                <input type="checkbox" <?php (isset($aCat[$cat_id])) ? print "checked='checked' " : ""; ?> name="cat" value="<?php echo $cat_id; ?>" class="custom-control-input get_cat" id="cat[<?php echo $cat_id; ?>]">
-                <label class="custom-control-label" for="cat[<?php echo $cat_id; ?>]"><span><?php echo $cat_image; ?></span> <span><?php echo $cat_title; ?></span><br></label>
-              </div>
-            </a>
-          </li>
-
-        <?php   } ?>
-
-
-
-      </ul>
-    </div>
   </div>
 
 </div>

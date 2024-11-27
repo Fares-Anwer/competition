@@ -49,12 +49,8 @@ if (!isset($_SESSION['admin_email'])) {
         require_once 'includes/view_slides.php';
       } elseif (isset($_GET['edit_slide'])) {
         require_once 'includes/edit_slide.php';
-      } elseif (isset($_GET['view_customers'])) {
-        require_once 'includes/view_customers.php';
-      } elseif (isset($_GET['view_orders'])) {
-        require_once 'includes/view_orders.php';
-      } elseif (isset($_GET['view_payments'])) {
-        require_once 'includes/view_payments.php';
+      } elseif (isset($_GET['view_users'])) {
+        require_once 'includes/view_users.php';
       } elseif (isset($_GET['add_user'])) {
         require_once 'includes/add_user.php';
       } elseif (isset($_GET['view_users'])) {

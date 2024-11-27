@@ -9,17 +9,7 @@
 			<li>
 				<a class="nav-link text-light" href="index.php">Home </a>
 			</li>
-			<li>
-				<a class="nav-link text-light" href="shop.php">Marketplace</a>
-			</li>
-			<?php if (isset($_SESSION['customer_email'])): ?>
-				<li><a class="nav-link text-light" href="customer/my_account.php?my_orders">My Account</a></li>
-			<?php else: ?>
-				<li><a class="nav-link text-light" href="checkout.php">My Account</a></li>
-			<?php endif ?>
-			<li>
-				<a class="nav-link text-light" href="cart.php">Shopping Cart</a>
-			</li>
+
 			<li>
 				<a class="nav-link text-light" href="contact.php">Contact Us</a>
 			</li>
@@ -119,7 +109,7 @@
 									}
 									move_uploaded_file($c_image_tmp, "customer/assets/customer_images/$c_image");
 
-									$add_customer = $getFromU->create("customers", array("customer_name" => $c_name, "customer_email" => $c_email, "customer_pass" => $c_pass, "customer_country" => $c_country, "customer_city" => $c_city, "customer_contact" => $c_contact, "customer_address" => $c_address, "customer_image" => $c_image, "customer_ip" => $c_ip, "customer_confirm_code" => $customer_confirm_code, "manufacturer_top" => $manufacturer_top, "is_artist" => $is_dis));
+									$add_customer = $getFromU->create("users", array("customer_name" => $c_name, "customer_email" => $c_email, "customer_pass" => $c_pass, "customer_country" => $c_country, "customer_city" => $c_city, "customer_contact" => $c_contact, "customer_address" => $c_address, "customer_image" => $c_image, "customer_ip" => $c_ip, "customer_confirm_code" => $customer_confirm_code, "manufacturer_top" => $manufacturer_top, "is_artist" => $is_dis));
 
 									if ($add_customer) {
 										$check_cart = $getFromU->count_product_by_ip($c_ip);

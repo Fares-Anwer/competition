@@ -3,24 +3,24 @@
 
 
 <?php
-    if (isset($_POST['login'])) {
-        $admin_email = $getFromU->checkInput($_POST['admin_email']);
-        $admin_pass = $getFromU->checkInput($_POST['admin_pass']);
+if (isset($_POST['login'])) {
+    $admin_email = $getFromU->checkInput($_POST['admin_email']);
+    $admin_pass = $getFromU->checkInput($_POST['admin_pass']);
 
-        if (!empty($admin_email) && !empty($admin_pass)) {
+    if (!empty($admin_email) && !empty($admin_pass)) {
 
-            if (!filter_var($admin_email, FILTER_VALIDATE_EMAIL)) {
-                $error = "Invaild Email Address";
-            }elseif (strlen($admin_pass) < 5) {
-                $error = "Password can't not be less than 5 Characters";
-            }else{
-                $admin_login = $getFromU->admin_login($admin_email, $admin_pass);
-                if ($admin_login === false) {
-                    $error = "Email or Password is not Matched";
-                }
+        if (!filter_var($admin_email, FILTER_VALIDATE_EMAIL)) {
+            $error = "Invaild Email Address";
+        } elseif (strlen($admin_pass) < 5) {
+            $error = "Password can't not be less than 5 Characters";
+        } else {
+            $admin_login = $getFromU->admin_login($admin_email, $admin_pass);
+            if ($admin_login === false) {
+                $error = "Email or Password is not Matched";
             }
         }
     }
+}
 
 
 
@@ -57,10 +57,10 @@
             <h2 class="login-title">Log in</h2>
             <?php if (isset($error)): ?>
                 <div class="alert alert-danger text-center text-white alert-dismissible fade show" role="alert">
-                  <?php echo $error; ?>
-                  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                    <?php echo $error; ?>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
             <?php endif ?>
             <div class="form-group">
@@ -139,5 +139,3 @@
 </body>
 
 </html>
-
-

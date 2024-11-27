@@ -63,17 +63,7 @@ if (isset($_POST['apply_coupon'])) {
 			<li>
 				<a class="nav-link text-light" href="index.php">Home </a>
 			</li>
-			<li>
-				<a class="nav-link text-light" href="shop.php">Marketplace</a>
-			</li>
-			<?php if (isset($_SESSION['customer_email'])): ?>
-				<li><a class="nav-link text-light" href="customer/my_account.php?my_orders">My Account</a></li>
-			<?php else: ?>
-				<li><a class="nav-link text-light" href="checkout.php">My Account</a></li>
-			<?php endif ?>
-			<li>
-				<a class="nav-link text-light" href="cart.php">Shopping Cart</a>
-			</li>
+
 			<li>
 				<a class="nav-link text-light" href="contact.php">Contact Us</a>
 			</li>
@@ -84,8 +74,6 @@ if (isset($_POST['apply_coupon'])) {
 				<a class="nav-link text-light" href="services.php">Services</a>
 			</li>
 		</ul>
-
-		<a href="cart.php" class="btn btn-warning ms-3"><i class="fas fa-shopping-cart"></i><span> <?php echo $getFromU->count_product_by_ip($ip_add); ?> items in Cart</span></a>
 
 		<!-- Search Form -->
 		<form class="d-flex ms-3" role="search">
@@ -133,8 +121,6 @@ if (isset($_POST['apply_coupon'])) {
 			<div class="col-md-9">
 				<div class="card mb-3">
 					<div class="card-body">
-						<h5 class="card-title">Shopping Cart</h5>
-						<p class="card-text text-muted">You currently have <?php echo $getFromU->count_product_by_ip($ip_add); ?> product(s) in Cart.</p>
 						<form method="post" action="cart.php" enctype="multipart/form-data">
 							<div class="table-responsive mb-3">
 								<table class="table table-bordered table-hover text-center">
@@ -150,44 +136,43 @@ if (isset($_POST['apply_coupon'])) {
 									<tbody>
 
 										<?php
-										$ip_add = $getFromU->getRealUserIp();
-										$total = 0;
-										$records = $getFromU->select_products_by_ip($ip_add);
-										foreach ($records as $record) {
-											$product_id = $record->p_id;
-											$product_qty = $record->qty;
-											$product_price = $record->product_price;
-											$get_prices = $getFromU->viewProductByProductID($product_id);
-											foreach ($get_prices as $get_price) {
-												$product_img1 = $get_price->product_img1;
-												$product_title = $get_price->product_title;
-												$sub_total = $product_price * $product_qty;
-												$total += $sub_total;
+										// $ip_add = $getFromU->getRealUserIp();
+										// $total = 0;
+										// $records = $getFromU->select_events_by_ip($ip_add);
+										// foreach ($records as $record) {
+										// 	$product_id = $record->p_id;
+										// 	$product_qty = $record->qty;
+										// 	$product_price = $record->product_price;
+										// 	$get_prices = $getFromU->viewProductByProductID($product_id);
+										// 	foreach ($get_prices as $get_price) {
+										// 		$product_img1 = $get_price->product_img1;
+										// 		$product_title = $get_price->product_title;
+										// 		$sub_total = $product_price * $product_qty;
+										// 		$total += $sub_total;
 
-												$_SESSION['product_qty'] = $product_qty;
+										// 		$_SESSION['product_qty'] = $product_qty;
 										?>
 
-												<tr>
-													<td>
-														<a href="details.php?product_id=<?php echo $product_id; ?>"><img class="img-fluid cart_image" src="admin_area/product_images/<?php echo $product_img1; ?>"></a>
-													</td>
-													<td>
-														<a href="details.php?product_id=<?php echo $product_id; ?>"><?php echo $product_title; ?></a>
-													</td>
-													<td>
-														<input type="number" name="quentity" value="<?php echo $_SESSION['product_qty']; ?>" data-product_id="<?php echo $product_id; ?>" class="quentity form-control">
-													</td>
-													<td>$ <?php echo $product_price; ?></td>
-													<td>
-														<div class="custom-control custom-checkbox">
-															<input type="checkbox" name="remove[]" value="<?php echo $product_id; ?>" class="custom-control-input" id="checkbox['<?php echo $product_id; ?>']">
-															<label class="custom-control-label" for="checkbox['<?php echo $product_id; ?>']"></label>
-														</div>
-													</td>
-													<td class="text-right">$ <?php echo number_format($sub_total, 2); ?></td>
-												</tr>
-										<?php }
-										} ?>
+										<tr>
+											<td>
+												<a href="details.php?product_id=<?php echo $product_id; ?>"><img class="img-fluid cart_image" src="admin_area/product_images/<?php echo $product_img1; ?>"></a>
+											</td>
+											<td>
+												<a href="details.php?product_id=<?php echo $product_id; ?>"><?php echo $product_title; ?></a>
+											</td>
+											<td>
+												<input type="number" name="quentity" value="<?php echo $_SESSION['product_qty']; ?>" data-product_id="<?php echo $product_id; ?>" class="quentity form-control">
+											</td>
+											<td>$ <?php echo $product_price; ?></td>
+											<td>
+												<div class="custom-control custom-checkbox">
+													<input type="checkbox" name="remove[]" value="<?php echo $product_id; ?>" class="custom-control-input" id="checkbox['<?php echo $product_id; ?>']">
+													<label class="custom-control-label" for="checkbox['<?php echo $product_id; ?>']"></label>
+												</div>
+											</td>
+											<td class="text-right">$ <?php echo number_format($sub_total, 2); ?></td>
+										</tr>
+
 
 										<tr>
 											<th class="text-right" colspan="5"> Total </th>
@@ -290,8 +275,8 @@ if (isset($_POST['apply_coupon'])) {
 
 			<div class="row">
 				<?php
-				$random_products = $getFromU->select_random_products();
-				foreach ($random_products as $random_product) {
+				$random_events = $getFromU->select_random_events();
+				foreach ($random_events as $random_product) {
 					$product_title = $random_product->product_title;
 					$product_id = $random_product->product_id;
 					$product_img1 = $random_product->product_img1;

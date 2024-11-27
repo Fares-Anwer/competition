@@ -9,9 +9,9 @@ $admin_image = $get_admin->admin_image;
 
 $dashboard = (isset($_GET['dashboard'])) ? 'active' : '';
 
-$products = (isset($_GET['add_product']) || isset($_GET['view_products']) || isset($_GET['edit_product']) || isset($_GET['Unapprove_product'])) ? 'active' : '';
+$events = (isset($_GET['add_product']) || isset($_GET['view_events']) || isset($_GET['edit_product']) || isset($_GET['Unapprove_product'])) ? 'active' : '';
 $add_product = (isset($_GET['add_product'])) ? 'active' : '';
-$view_products = (isset($_GET['view_products'])) ? 'active' : '';
+$view_events = (isset($_GET['view_events'])) ? 'active' : '';
 $unapprove_product = (isset($_GET['Unapprove_product'])) ? 'active' : '';
 
 
@@ -23,11 +23,9 @@ $slides = (isset($_GET['add_slide']) || isset($_GET['view_slides']) || isset($_G
 $add_slide = (isset($_GET['add_slide'])) ? 'active' : '';
 $view_slides = (isset($_GET['view_slides'])) ? 'active' : '';
 
-$view_customers = (isset($_GET['view_customers'])) ? 'active' : '';
+$view_users = (isset($_GET['view_users'])) ? 'active' : '';
 
-$view_orders = (isset($_GET['view_orders'])) ? 'active' : '';
 
-$view_payments = (isset($_GET['view_payments'])) ? 'active' : '';
 
 $users = (isset($_GET['add_user']) || isset($_GET['view_users']) || isset($_GET['edit_user'])) ? 'active' : '';
 $add_user = (isset($_GET['add_user'])) ? 'active' : '';
@@ -78,35 +76,23 @@ $view_enquiry_types = (isset($_GET['view_enquiry_types'])) ? 'active' : '';
             </li>
 
             <li class="heading">FEATURES</li>
-            <li class="<?php echo $products; ?>">
+            <li class="<?php echo $events; ?>">
                 <a href="javascript:;"><i class="sidebar-item-icon fab fa-product-hunt"></i>
-                    <span class="nav-label">Products</span><i class="fa fa-angle-left arrow"></i>
+                    <span class="nav-label">events</span><i class="fa fa-angle-left arrow"></i>
                 </a>
                 <ul class="nav-2-level collapse">
                     <li>
                         <a class="<?php echo $add_product; ?>" href="index.php?add_product"><i class="fas fa-plus-circle"></i> Insert Product</a>
                     </li>
                     <li>
-                        <a class="<?php echo $view_products; ?>" href="index.php?view_products"><i class="fas fa-eye"></i> View Approve Products</a>
+                        <a class="<?php echo $view_events; ?>" href="index.php?view_events"><i class="fas fa-eye"></i> View Approve events</a>
                     </li>
                     <li>
-                        <a class="<?php echo $unapprove_product; ?>" href="index.php?Unapprove_product"><i class="fas fa-eye-slash"></i> View Unapprove Products</a>
+                        <a class="<?php echo $unapprove_product; ?>" href="index.php?Unapprove_product"><i class="fas fa-eye-slash"></i> View Unapprove events</a>
                     </li>
                 </ul>
             </li>
-            <li class="<?php echo $cats; ?>">
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-table"></i>
-                    <span class="nav-label">Categories</span><i class="fa fa-angle-left arrow"></i>
-                </a>
-                <ul class="nav-2-level collapse">
-                    <li>
-                        <a class="<?php echo $add_cat; ?>" href="index.php?add_cat"><i class="fas fa-plus-circle"></i> Insert Category</a>
-                    </li>
-                    <li>
-                        <a class="<?php echo $view_cats; ?>" href="index.php?view_cats"><i class="fas fa-eye"></i> View Categories</a>
-                    </li>
-                </ul>
-            </li>
+
             <li class="<?php echo $boxes; ?>">
                 <a href="javascript:;"><i class="sidebar-item-icon fas fa-arrows-alt"></i>
                     <span class="nav-label">Boxes</span><i class="fas fa-angle-left arrow"></i>
@@ -149,21 +135,13 @@ $view_enquiry_types = (isset($_GET['view_enquiry_types'])) ? 'active' : '';
                     </li>
                 </ul>
             </li>
-            <li class="<?php echo $view_customers; ?>">
-                <a href="index.php?view_customers"><i class="sidebar-item-icon fas fa-users"></i>
-                    <span class="nav-label">View Customers</span>
+            <li class="<?php echo $view_users; ?>">
+                <a href="index.php?view_users"><i class="sidebar-item-icon fas fa-users"></i>
+                    <span class="nav-label">View users</span>
                 </a>
             </li>
-            <li class="<?php echo $view_orders; ?>">
-                <a href="index.php?view_orders"><i class="sidebar-item-icon fas fa-list-alt"></i>
-                    <span class="nav-label">View Orders</span>
-                </a>
-            </li>
-            <li class="<?php echo $view_payments; ?>">
-                <a href="index.php?view_payments"><i class="sidebar-item-icon fas fa-money-bill-alt"></i>
-                    <span class="nav-label">View Payments</span>
-                </a>
-            </li>
+
+
             <li class="<?php echo $users; ?>">
                 <a href="javascript:;"><i class="sidebar-item-icon fa fa-users"></i>
                     <span class="nav-label">Users</span><i class="fa fa-angle-left arrow"></i></a>

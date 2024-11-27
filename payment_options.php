@@ -1,9 +1,9 @@
 <?php
-	$session_email = $_SESSION['customer_email'];
+$session_email = $_SESSION['customer_email'];
 
-	$select_customer = $getFromU->view_customer_by_email($session_email);
+$select_customer = $getFromU->view_customer_by_email($session_email);
 
-	$customer_id = $select_customer->customer_id;
+$customer_id = $select_customer->customer_id;
 
 ?>
 
@@ -26,23 +26,23 @@
         <input type="hidden" name="cancel_return" value="http://localhost/ecommerce/">
 
         <?php
-          $i = 0;
-          $ip_add = $getFromU->getRealUserIp();
-          $get_carts = $getFromU->select_products_by_ip($ip_add);
-          foreach ($get_carts as $get_cart) {
-            $product_id = $get_cart->p_id;
-            $product_qty = $get_cart->qty;
-            $product_price = $get_cart->product_price;
+        $i = 0;
+        $ip_add = $getFromU->getRealUserIp();
+        $get_carts = $getFromU->select_events_by_ip($ip_add);
+        foreach ($get_carts as $get_cart) {
+          $product_id = $get_cart->p_id;
+          $product_qty = $get_cart->qty;
+          $product_price = $get_cart->product_price;
 
-            $get_product = $getFromU->view_Product_By_Product_ID($product_id);
-            $product_title = $get_product->product_title;
-            $i++;
+          $get_product = $getFromU->view_Product_By_Product_ID($product_id);
+          $product_title = $get_product->product_title;
+          $i++;
         ?>
 
-        <input type="hidden" name="item_name_<?php echo $i; ?>" value="<?php echo $product_title; ?>">
-        <input type="hidden" name="item_number_<?php echo $i; ?>" value="<?php echo $i; ?>">
-        <input type="hidden" name="amount_<?php echo $i; ?>" value="<?php echo $product_price; ?>">
-        <input type="hidden" name="quantity_<?php echo $i; ?>" value="<?php echo $product_qty; ?>">
+          <input type="hidden" name="item_name_<?php echo $i; ?>" value="<?php echo $product_title; ?>">
+          <input type="hidden" name="item_number_<?php echo $i; ?>" value="<?php echo $i; ?>">
+          <input type="hidden" name="amount_<?php echo $i; ?>" value="<?php echo $product_price; ?>">
+          <input type="hidden" name="quantity_<?php echo $i; ?>" value="<?php echo $product_qty; ?>">
 
         <?php } ?>
 

@@ -36,17 +36,7 @@ if (isset($_POST['add_to_wishlist'])) {
 			<li>
 				<a class="nav-link text-light" href="index.php">Home </a>
 			</li>
-			<li>
-				<a class="nav-link text-light" href="shop.php">Marketplace</a>
-			</li>
-			<?php if (isset($_SESSION['customer_email'])): ?>
-				<li><a class="nav-link text-light" href="customer/my_account.php?my_orders">My Account</a></li>
-			<?php else: ?>
-				<li><a class="nav-link text-light" href="checkout.php">My Account</a></li>
-			<?php endif ?>
-			<li>
-				<a class="nav-link text-light" href="cart.php">Shopping Cart</a>
-			</li>
+
 			<li>
 				<a class="nav-link text-light" href="contact.php">Contact Us</a>
 			</li>
@@ -78,10 +68,10 @@ if (isset($_POST['add_to_wishlist'])) {
 			if (isset($_GET['product_id'])) {
 				$the_product_id = $_GET['product_id'];
 
-				$get_products = $getFromU->viewProductByProductID($the_product_id);
-				//var_dump($get_products);
+				$get_events = $getFromU->viewProductByProductID($the_product_id);
+				//var_dump($get_events);
 
-				foreach ($get_products as $get_product) {
+				foreach ($get_events as $get_product) {
 					$cat_id          = $get_product->cat_id;
 					$product_title     = $get_product->product_title;
 					$product_price     = $get_product->product_price;
@@ -112,18 +102,6 @@ if (isset($_POST['add_to_wishlist'])) {
 
 			?>
 
-
-
-
-						<div class="col-md-12">
-							<nav aria-label="breadcrumb">
-								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="shop.php">Marketplace</a></li>
-									<li class="breadcrumb-item" aria-current="page"><?php echo $product_title; ?></li>
-								</ol>
-							</nav>
-						</div>
 
 
 						<?php if (isset($error)) : ?>
@@ -313,13 +291,13 @@ if (isset($_POST['add_to_wishlist'])) {
 		<div class="row">
 			<?php
 			//var_dump($cat_id);
-			$view_products = $getFromU->viewProductByProductID($the_product_id);
-			//var_dump($products);
-			foreach ($view_products as $view_product) {
+			$view_events = $getFromU->viewProductByProductID($the_product_id);
+			//var_dump($events);
+			foreach ($view_events as $view_product) {
 				$cat_id = $view_product->cat_id;
 				//var_dump($cat_id);
-				$products = $getFromU->viewProductByCatID($cat_id);
-				foreach ($products as $product) {
+				$events = $getFromU->viewProductByCatID($cat_id);
+				foreach ($events as $product) {
 					$product_id = $product->product_id;
 					$product_title = $product->product_title;
 					$product_price = $product->product_price;

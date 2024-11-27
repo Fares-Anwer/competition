@@ -1,6 +1,6 @@
 <?php
 
-// / getProducts function Code Starts ///
+// / getevents function Code Starts ///
 
 $aWhere = array();
 
@@ -15,7 +15,7 @@ if (isset($_REQUEST['man']) && is_array($_REQUEST['man'])) {
 }
 
 // / Manufacturers Code Ends ///
-// / Products Categories Code Starts ///
+// / events Categories Code Starts ///
 
 if (isset($_REQUEST['p_cat']) && is_array($_REQUEST['p_cat'])) {
 	foreach ($_REQUEST['p_cat'] as $sKey => $sVal) {
@@ -25,7 +25,7 @@ if (isset($_REQUEST['p_cat']) && is_array($_REQUEST['p_cat'])) {
 	}
 }
 
-// / Products Categories Code Ends ///
+// / events Categories Code Ends ///
 // / Categories Code Starts ///
 
 if (isset($_REQUEST['cat']) && is_array($_REQUEST['cat'])) {
@@ -51,29 +51,15 @@ $start_from = ($page - 1) * $per_page;
 $sLimit = " order by 1 DESC LIMIT $start_from,$per_page";
 $sWhere = (count($aWhere) > 0 ? ' WHERE ' . implode(' or ', $aWhere) : '') . $sLimit;
 
-$get_products = $getFromU->selectAllProducts($sWhere);
+$get_events = $getFromU->selectAllevents($sWhere);
 
-foreach ($get_products as $get_product) {
+foreach ($get_events as $get_product) {
 	$product_id = $get_product->product_id;
 	$product_title = $get_product->product_title;
 	$product_price = $get_product->product_price;
 	$product_img1 = $get_product->product_img1;
 	$product_label   = $get_product->product_label;
-	$customer_id = $get_product->customer_id;
-	$product_psp_price = $get_product->product_psp_price;
 
-	$view_manufacturer = $getFromU->view_customer_by_id($customer_id);
-	@$manufacturer_title = $view_manufacturer->customer_name;
-	if ($manufacturer_title == NULL) {
-		$manufacturer_title = "Admin";
-	}
-	if ($product_label == "Sale" || $product_label == "Gift") {
-		$product_price = "<del>$$product_price</del>";
-		$product_psp_price = "<i class='fas fa-long-arrow-alt-right'></i> $$product_psp_price";
-	} else {
-		$product_price = "$$product_price";
-		$product_psp_price = "";
-	}
 
 ?>
 
@@ -85,8 +71,6 @@ foreach ($get_products as $get_product) {
 				<div class="card-body text-center pt-0">
 					<p class="btn btn-sm btn-info mb-0">Mnf By : <?php echo $manufacturer_title; ?></p>
 					<hr>
-					<h6 class="card-title"><a href="details.php?product_id=<?php echo $product_id; ?>"><?php echo $product_title; ?></a></h6>
-					<p class="card-text"><?php echo $product_price; ?> <?php echo $product_psp_price; ?></p>
 					<div class="row">
 						<div class="col-md-6  pr-1 pb-2">
 							<a href="details.php?product_id=<?php echo $product_id; ?>" class="btn btn-outline-info form-control">Details</a>
@@ -108,5 +92,5 @@ foreach ($get_products as $get_product) {
 
 	</div> <!-- SINGLE PRODUCT END -->
 
-<?php  } // / getProducts function Code Ends /// 
+<?php  } // / getevents function Code Ends /// 
 ?>
