@@ -10,8 +10,8 @@ $admin_image = $get_admin->admin_image;
 $get_enevts = $getFromU->viewAllFromTable("events");
 $count_enevts = count($get_enevts);
 
-$get_customers = $getFromU->viewAllFromTable("customers");
-$count_customers = count($get_customers);
+$get_users = $getFromU->viewAllFromTable("users");
+$count_users = count($get_users);
 
 $get_enevt_categories = $getFromU->viewAllFromTable("categories");
 $count_enevt_categories = count($get_enevt_categories);
@@ -171,7 +171,7 @@ $count_enevt_categories = count($get_enevt_categories);
                 <ul class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="index.php?user_profile=<?php echo $admin_id; ?>"><i class="fa fa-user"></i>Profile</a>
                     <a class="dropdown-item" href="index.php?view_enevts"><i class="fa fa-cog"></i>enevts <span class="badge badge-info rounded"><?php echo $count_enevts; ?></span></a>
-                    <a class="dropdown-item" href="index.php?view_customers"><i class="fas fa-users"></i>Customers <span class="badge badge-info rounded"><?php echo $count_customers; ?></span></a>
+                    <a class="dropdown-item" href="index.php?view_users"><i class="fas fa-users"></i>users <span class="badge badge-info rounded"><?php echo $count_users; ?></span></a>
                     <a class="dropdown-item" href="index.php?view_cats"><i class="fas fa-ambulance"></i>categories <span class="badge badge-info rounded"><?php echo $count_enevt_categories; ?></span></a>
                     <li class="dropdown-divider"></li>
                     <a class="dropdown-item" href="logout.php"><i class="fa fa-power-off"></i>Logout</a>

@@ -9,18 +9,10 @@ if (isset($_GET['edit_enevt'])) {
 
 	$enevt_title 		= $view_enevt->enevt_title;
 	$cat_id 				= $view_enevt->cat_id;
-	$enevt_price 		= $view_enevt->enevt_price;
-	$enevt_psp_price = $view_enevt->enevt_psp_price;
 	$enevt_desc 		= $view_enevt->enevt_desc;
-	$enevt_keywords = $view_enevt->enevt_keywords;
 	$the_enevt_img1 = $view_enevt->enevt_img1;
-	$enevt_label 		= $view_enevt->enevt_label;
-	$the_status 		  = $view_enevt->status;
-	$customer_id = $view_enevt->customer_id;
-	$view_p_category 	= $getFromU->view_All_By_cat_id($cat_id);
 
 	$view_category 		= $getFromU->view_All_By_cat_ID($cat_id);
-	$the_cat_title 		= $view_category->cat_title;
 }
 
 ?>
@@ -29,14 +21,7 @@ if (isset($_GET['edit_enevt'])) {
 
 if (isset($_POST['update_enevt'])) {
 	$enevt_title 		= $_POST['enevt_title'];
-	$cat_id 					= $_POST['cat'];
-	$enevt_price 		= $_POST['enevt_price'];
-	$enevt_psp_price = $_POST['enevt_psp_price'];
 	$enevt_desc 		= $_POST['enevt_desc'];
-	$enevt_keywords = $_POST['enevt_keywords'];
-	$enevt_label    = $_POST['enevt_label'];
-	$status    				= $_POST['status'];
-	$customer_id 		= $_POST['customer_id'];
 	$enevt_img1 		= $_FILES['enevt_img1']['name'];
 
 	$temp_name1 			= $_FILES['enevt_img1']['tmp_name'];
@@ -48,7 +33,7 @@ if (isset($_POST['update_enevt'])) {
 
 	move_uploaded_file($temp_name1, "enevt_images/$enevt_img1");
 
-	$update_enevt = $getFromU->update_enevt("events", $enevt_id, array("cat_id" => $cat_id, "add_date" => date("Y-m-d H:i:s"), "enevt_title" => $enevt_title, "enevt_img1" => $enevt_img1, "enevt_price" => $enevt_price, "enevt_psp_price" => $enevt_psp_price, "enevt_desc" => $enevt_desc, "enevt_keywords" => $enevt_keywords, "enevt_label" => $enevt_label, "status" => $status));
+	$update_enevt = $getFromU->update_enevt("events", $enevt_id, array("add_date" => date("Y-m-d H:i:s"), "enevt_title" => $enevt_title, "enevt_img1" => $enevt_img1, "enevt_desc" => $enevt_desc));
 
 	if ($update_enevt) {
 		$_SESSION['enevt_update_msg'] = "enevt has been Updated Sucessfully";
