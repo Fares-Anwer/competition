@@ -236,13 +236,7 @@ class User
     return $stmt->fetchAll();
   }
 
-  public function view_pending_orders_with_limit()
-  {
-    $sql = "SELECT * FROM pending_orders ORDER BY 1 DESC LIMIT 0, 5";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->execute();
-    return $stmt->fetchAll();
-  }
+
 
   public function view_customer_order_by_order_id($order_id)
   {
@@ -477,13 +471,7 @@ class User
     return $stmt->fetchAll();
   }
 
-  public function selectTopProductCatagories()
-  {
-    $sql = "SELECT * FROM categories WHERE cat_top = 'Yes' ";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->execute();
-    return $stmt->fetchAll();
-  }
+
 
   public function selectNonTopProductCatagories()
   {

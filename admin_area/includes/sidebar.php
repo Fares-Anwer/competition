@@ -25,9 +25,7 @@ $view_slides = (isset($_GET['view_slides'])) ? 'active' : '';
 
 $view_users = (isset($_GET['view_users'])) ? 'active' : '';
 
-$view_orders = (isset($_GET['view_orders'])) ? 'active' : '';
 
-$view_payments = (isset($_GET['view_payments'])) ? 'active' : '';
 
 $users = (isset($_GET['add_user']) || isset($_GET['view_users']) || isset($_GET['edit_user'])) ? 'active' : '';
 $add_user = (isset($_GET['add_user'])) ? 'active' : '';
@@ -94,19 +92,7 @@ $view_enquiry_types = (isset($_GET['view_enquiry_types'])) ? 'active' : '';
                     </li>
                 </ul>
             </li>
-            <li class="<?php echo $cats; ?>">
-                <a href="javascript:;"><i class="sidebar-item-icon fa fa-table"></i>
-                    <span class="nav-label">Categories</span><i class="fa fa-angle-left arrow"></i>
-                </a>
-                <ul class="nav-2-level collapse">
-                    <li>
-                        <a class="<?php echo $add_cat; ?>" href="index.php?add_cat"><i class="fas fa-plus-circle"></i> Insert Category</a>
-                    </li>
-                    <li>
-                        <a class="<?php echo $view_cats; ?>" href="index.php?view_cats"><i class="fas fa-eye"></i> View Categories</a>
-                    </li>
-                </ul>
-            </li>
+
             <li class="<?php echo $boxes; ?>">
                 <a href="javascript:;"><i class="sidebar-item-icon fas fa-arrows-alt"></i>
                     <span class="nav-label">Boxes</span><i class="fas fa-angle-left arrow"></i>
@@ -154,16 +140,8 @@ $view_enquiry_types = (isset($_GET['view_enquiry_types'])) ? 'active' : '';
                     <span class="nav-label">View users</span>
                 </a>
             </li>
-            <li class="<?php echo $view_orders; ?>">
-                <a href="index.php?view_orders"><i class="sidebar-item-icon fas fa-list-alt"></i>
-                    <span class="nav-label">View Orders</span>
-                </a>
-            </li>
-            <li class="<?php echo $view_payments; ?>">
-                <a href="index.php?view_payments"><i class="sidebar-item-icon fas fa-money-bill-alt"></i>
-                    <span class="nav-label">View Payments</span>
-                </a>
-            </li>
+
+
             <li class="<?php echo $users; ?>">
                 <a href="javascript:;"><i class="sidebar-item-icon fa fa-users"></i>
                     <span class="nav-label">Users</span><i class="fa fa-angle-left arrow"></i></a>

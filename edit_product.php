@@ -17,7 +17,6 @@ if (isset($_GET['edit_product'])) {
 	$product_label 		= $view_product->product_label;
 	$the_status 		  = $view_product->status;
 	$customer_id = $view_product->customer_id;
-	$view_p_category 	= $getFromU->view_All_By_cat_id($cat_id);
 
 	$view_category 		= $getFromU->view_All_By_cat_ID($cat_id);
 	$the_cat_title 		= $view_category->cat_title;
