@@ -192,8 +192,8 @@
 	<div class="row">
 
 		<?php
-		$getProducts         = $getFromU->selectLatestProduct();
-		foreach ($getProducts as $getProduct) {
+		$getevents         = $getFromU->selectLatestProduct();
+		foreach ($getevents as $getProduct) {
 			$product_id        = $getProduct->product_id;
 			$product_title     = $getProduct->product_title;
 			$product_price     = $getProduct->product_price;

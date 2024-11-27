@@ -1,6 +1,6 @@
 <?php
 
-// / getProducts function Code Starts ///
+// / getevents function Code Starts ///
 
 $aWhere = array();
 
@@ -15,7 +15,7 @@ if (isset($_REQUEST['man']) && is_array($_REQUEST['man'])) {
 }
 
 // / Manufacturers Code Ends ///
-// / Products Categories Code Starts ///
+// / events Categories Code Starts ///
 
 if (isset($_REQUEST['p_cat']) && is_array($_REQUEST['p_cat'])) {
 	foreach ($_REQUEST['p_cat'] as $sKey => $sVal) {
@@ -25,7 +25,7 @@ if (isset($_REQUEST['p_cat']) && is_array($_REQUEST['p_cat'])) {
 	}
 }
 
-// / Products Categories Code Ends ///
+// / events Categories Code Ends ///
 // / Categories Code Starts ///
 
 if (isset($_REQUEST['cat']) && is_array($_REQUEST['cat'])) {
@@ -51,9 +51,9 @@ $start_from = ($page - 1) * $per_page;
 $sLimit = " order by 1 DESC LIMIT $start_from,$per_page";
 $sWhere = (count($aWhere) > 0 ? ' WHERE ' . implode(' or ', $aWhere) : '') . $sLimit;
 
-$get_products = $getFromU->selectAllProducts($sWhere);
+$get_events = $getFromU->selectAllevents($sWhere);
 
-foreach ($get_products as $get_product) {
+foreach ($get_events as $get_product) {
 	$product_id = $get_product->product_id;
 	$product_title = $get_product->product_title;
 	$product_price = $get_product->product_price;
@@ -108,5 +108,5 @@ foreach ($get_products as $get_product) {
 
 	</div> <!-- SINGLE PRODUCT END -->
 
-<?php  } // / getProducts function Code Ends /// 
+<?php  } // / getevents function Code Ends /// 
 ?>

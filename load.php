@@ -3,15 +3,15 @@
 
 <?php
 
-	switch ($_REQUEST['sAction']) {
-		case 'getPaginator':
-			require_once 'includes/get_paginator.php';
-			break;
+switch ($_REQUEST['sAction']) {
+	case 'getPaginator':
+		require_once 'includes/get_paginator.php';
+		break;
 
-		default:
-      require_once 'includes/get_all_products.php';
-			break;
-	}
+	default:
+		require_once 'includes/get_all_events.php';
+		break;
+}
 
 
 ?>

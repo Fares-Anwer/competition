@@ -52,7 +52,7 @@ if (isset($_POST['update_product'])) {
 
 	if ($update_product) {
 		$_SESSION['product_update_msg'] = "Product has been Updated Sucessfully";
-		header('Location: index.php?view_products');
+		header('Location: index.php?view_events');
 	} else {
 		echo '<script>alert("Product has not added")</script>';
 	}
@@ -63,14 +63,14 @@ echo $customer_id;
 <nav aria-label="breadcrumb" class="my-4">
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item"><a href="index.php?dashboard">Dashboard</a></li>
-		<li class="breadcrumb-item active" aria-current="page">Update Products</li>
+		<li class="breadcrumb-item active" aria-current="page">Update events</li>
 	</ol>
 </nav>
 
 
 
 <div class="card rounded">
-	<div class="card-header bg-light h5"><i class="fas fa-edit"></i> Update Products</div>
+	<div class="card-header bg-light h5"><i class="fas fa-edit"></i> Update events</div>
 	<div class="card-body">
 		<div class="row">
 			<div class="col-md-8 offset-md-2">

@@ -32,14 +32,14 @@ if (isset($_POST['submit'])) {
 <nav aria-label="breadcrumb" class="my-4">
 	<ol class="breadcrumb">
 		<li class="breadcrumb-item"><a href="index.php?dashboard">Dashboard</a></li>
-		<li class="breadcrumb-item active" aria-current="page">Insert Products</li>
+		<li class="breadcrumb-item active" aria-current="page">Insert events</li>
 	</ol>
 </nav>
 
 
 
 <div class="card rounded">
-	<div class="card-header bg-light h5"><i class="fas fa-plus-square"></i> Insert Products</div>
+	<div class="card-header bg-light h5"><i class="fas fa-plus-square"></i> Insert events</div>
 	<div class="card-body">
 		<div class="row">
 			<div class="col-md-8 offset-md-2">

@@ -9,9 +9,9 @@ $admin_image = $get_admin->admin_image;
 
 $dashboard = (isset($_GET['dashboard'])) ? 'active' : '';
 
-$products = (isset($_GET['add_product']) || isset($_GET['view_products']) || isset($_GET['edit_product']) || isset($_GET['Unapprove_product'])) ? 'active' : '';
+$events = (isset($_GET['add_product']) || isset($_GET['view_events']) || isset($_GET['edit_product']) || isset($_GET['Unapprove_product'])) ? 'active' : '';
 $add_product = (isset($_GET['add_product'])) ? 'active' : '';
-$view_products = (isset($_GET['view_products'])) ? 'active' : '';
+$view_events = (isset($_GET['view_events'])) ? 'active' : '';
 $unapprove_product = (isset($_GET['Unapprove_product'])) ? 'active' : '';
 
 
@@ -78,19 +78,19 @@ $view_enquiry_types = (isset($_GET['view_enquiry_types'])) ? 'active' : '';
             </li>
 
             <li class="heading">FEATURES</li>
-            <li class="<?php echo $products; ?>">
+            <li class="<?php echo $events; ?>">
                 <a href="javascript:;"><i class="sidebar-item-icon fab fa-product-hunt"></i>
-                    <span class="nav-label">Products</span><i class="fa fa-angle-left arrow"></i>
+                    <span class="nav-label">events</span><i class="fa fa-angle-left arrow"></i>
                 </a>
                 <ul class="nav-2-level collapse">
                     <li>
                         <a class="<?php echo $add_product; ?>" href="index.php?add_product"><i class="fas fa-plus-circle"></i> Insert Product</a>
                     </li>
                     <li>
-                        <a class="<?php echo $view_products; ?>" href="index.php?view_products"><i class="fas fa-eye"></i> View Approve Products</a>
+                        <a class="<?php echo $view_events; ?>" href="index.php?view_events"><i class="fas fa-eye"></i> View Approve events</a>
                     </li>
                     <li>
-                        <a class="<?php echo $unapprove_product; ?>" href="index.php?Unapprove_product"><i class="fas fa-eye-slash"></i> View Unapprove Products</a>
+                        <a class="<?php echo $unapprove_product; ?>" href="index.php?Unapprove_product"><i class="fas fa-eye-slash"></i> View Unapprove events</a>
                     </li>
                 </ul>
             </li>

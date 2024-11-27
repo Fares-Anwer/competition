@@ -6,9 +6,9 @@
 </div>
 
 
-<div class="row" id="Products">
+<div class="row" id="events">
 
-	<?php require_once 'includes/get_all_products.php'; ?>
+	<?php require_once 'includes/get_all_events.php'; ?>
 
 </div> <!-- ROW END -->
 

@@ -58,7 +58,7 @@
 				<div class="col-md-6 "> <!-- col-md-6 Starts -->
 					<ul class="menu"> <!-- menu starts -->
 						<?php if (@$customer_disability == "1"): ?>
-							<li><a href="insert_products.php">Add Products</a></li>
+							<li><a href="insert_events.php">Add events</a></li>
 						<?php endif; ?>
 						<li><a href="cart.php">Go To Cart</a></li>
 

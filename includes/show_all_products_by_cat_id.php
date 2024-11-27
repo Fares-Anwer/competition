@@ -29,8 +29,8 @@ if (isset($_GET['cat_id'])) {
 
 	<div class="row">
 		<?php
-		$get_products_by_cat_id = $getFromU->selectAllProductBy_cat_ID($start_from, $per_page, $cat_id);
-		$count_product = count($get_products_by_cat_id);
+		$get_events_by_cat_id = $getFromU->selectAllProductBy_cat_ID($start_from, $per_page, $cat_id);
+		$count_product = count($get_events_by_cat_id);
 		if ($count_product == 0) {
 		?>
 			<div class="card mb-3 w-100 text-center">
@@ -43,7 +43,7 @@ if (isset($_GET['cat_id'])) {
 
 			<?php
 		} else {
-			foreach ($get_products_by_cat_id as $get_product_by_cat_id) {
+			foreach ($get_events_by_cat_id as $get_product_by_cat_id) {
 				$product_id = $get_product_by_cat_id->product_id;
 				$product_title = $get_product_by_cat_id->product_title;
 				$product_price = $get_product_by_cat_id->product_price;
@@ -68,7 +68,7 @@ if (isset($_GET['cat_id'])) {
 						</div>
 					</div>
 				</div> <!-- SINGLE PRODUCT END -->
-			<?php } ?> <!-- get_products end -->
+			<?php } ?> <!-- get_events end -->
 
 	</div> <!-- ROW END -->
 

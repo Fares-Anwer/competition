@@ -6,7 +6,7 @@
 </div>
 
 
-<div class="row" id="Products">
+<div class="row" id="events">
 	<?php
 
 	$per_page = 6;
@@ -17,8 +17,8 @@
 	}
 	$start_from = ($page - 1) * $per_page;
 
-	$get_products = $getFromU->selectAllProducts($start_from, $per_page);
-	foreach ($get_products as $get_product) {
+	$get_events = $getFromU->selectAllevents($start_from, $per_page);
+	foreach ($get_events as $get_product) {
 		$product_id = $get_product->product_id;
 		$product_title = $get_product->product_title;
 		$product_price = $get_product->product_price;
@@ -43,7 +43,7 @@
 				</div>
 			</div>
 		</div> <!-- SINGLE PRODUCT END -->
-	<?php } ?> <!-- get_products end -->
+	<?php } ?> <!-- get_events end -->
 
 </div> <!-- ROW END -->
 

@@ -77,7 +77,7 @@ if (isset($_POST['submit'])) {
 
 
 <div class="card rounded">
-	<div class="card-header bg-light h5"><i class="fas fa-plus-square"></i> Insert Products</div>
+	<div class="card-header bg-light h5"><i class="fas fa-plus-square"></i> Insert events</div>
 	<div class="card-body">
 		<div class="row">
 			<div class="col-md-8 offset-md-2">

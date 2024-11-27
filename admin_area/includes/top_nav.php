@@ -13,8 +13,6 @@ $count_enevts = count($get_enevts);
 $get_users = $getFromU->viewAllFromTable("users");
 $count_users = count($get_users);
 
-$get_enevt_categories = $getFromU->viewAllFromTable("categories");
-$count_enevt_categories = count($get_enevt_categories);
 
 ?>
 

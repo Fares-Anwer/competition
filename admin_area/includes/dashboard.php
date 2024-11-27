@@ -1,7 +1,7 @@
 <?php
 
-$get_products = $getFromU->viewAllFromTable("events");
-$count_products = count($get_products);
+$get_events = $getFromU->viewAllFromTable("events");
+$count_events = count($get_events);
 
 $get_users = $getFromU->viewAllFromTable("users");
 $count_users = count($get_users);
@@ -56,8 +56,8 @@ $count_pending_orders = count($get_pending_orders);
     <div class="col-lg-3 col-md-6">
       <div class="ibox bg-info color-white widget-stat rounded">
         <div class="ibox-body">
-          <h2 class="m-b-5 font-strong"><?php echo $count_products; ?></h2>
-          <div class="m-b-5">PRODUCTS</div><a class="text-white" href="index.php?view_products"><i class="fas fa-clipboard-check widget-stat-icon"></i></a>
+          <h2 class="m-b-5 font-strong"><?php echo $count_events; ?></h2>
+          <div class="m-b-5">events</div><a class="text-white" href="index.php?view_events"><i class="fas fa-clipboard-check widget-stat-icon"></i></a>
           <div><i class="fa fa-level-up m-r-5"></i><small>17% higher</small></div>
         </div>
       </div>
@@ -202,7 +202,7 @@ $count_pending_orders = count($get_pending_orders);
           </ul>
         </div>
         <div class="ibox-footer text-center">
-          <a href="index.php?view_products">View All Products</a>
+          <a href="index.php?view_events">View All events</a>
         </div>
       </div>
     </div>

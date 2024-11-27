@@ -248,8 +248,8 @@ $total = 0;
 
 			<div class="row">
 				<?php
-				$random_products = $getFromU->select_random_products();
-				foreach ($random_products as $random_product) {
+				$random_events = $getFromU->select_random_events();
+				foreach ($random_events as $random_product) {
 					$product_title = $random_product->product_title;
 					$product_id = $random_product->product_id;
 					$product_img1 = $random_product->product_img1;

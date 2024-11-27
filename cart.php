@@ -147,7 +147,7 @@ if (isset($_POST['apply_coupon'])) {
 										<?php
 										// $ip_add = $getFromU->getRealUserIp();
 										// $total = 0;
-										// $records = $getFromU->select_products_by_ip($ip_add);
+										// $records = $getFromU->select_events_by_ip($ip_add);
 										// foreach ($records as $record) {
 										// 	$product_id = $record->p_id;
 										// 	$product_qty = $record->qty;
@@ -284,8 +284,8 @@ if (isset($_POST['apply_coupon'])) {
 
 			<div class="row">
 				<?php
-				$random_products = $getFromU->select_random_products();
-				foreach ($random_products as $random_product) {
+				$random_events = $getFromU->select_random_events();
+				foreach ($random_events as $random_product) {
 					$product_title = $random_product->product_title;
 					$product_id = $random_product->product_id;
 					$product_img1 = $random_product->product_img1;

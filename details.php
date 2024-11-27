@@ -76,10 +76,10 @@ if (isset($_POST['add_to_wishlist'])) {
 			if (isset($_GET['product_id'])) {
 				$the_product_id = $_GET['product_id'];
 
-				$get_products = $getFromU->viewProductByProductID($the_product_id);
-				//var_dump($get_products);
+				$get_events = $getFromU->viewProductByProductID($the_product_id);
+				//var_dump($get_events);
 
-				foreach ($get_products as $get_product) {
+				foreach ($get_events as $get_product) {
 					$cat_id          = $get_product->cat_id;
 					$product_title     = $get_product->product_title;
 					$product_price     = $get_product->product_price;
@@ -299,13 +299,13 @@ if (isset($_POST['add_to_wishlist'])) {
 		<div class="row">
 			<?php
 			//var_dump($cat_id);
-			$view_products = $getFromU->viewProductByProductID($the_product_id);
-			//var_dump($products);
-			foreach ($view_products as $view_product) {
+			$view_events = $getFromU->viewProductByProductID($the_product_id);
+			//var_dump($events);
+			foreach ($view_events as $view_product) {
 				$cat_id = $view_product->cat_id;
 				//var_dump($cat_id);
-				$products = $getFromU->viewProductByCatID($cat_id);
-				foreach ($products as $product) {
+				$events = $getFromU->viewProductByCatID($cat_id);
+				foreach ($events as $product) {
 					$product_id = $product->product_id;
 					$product_title = $product->product_title;
 					$product_price = $product->product_price;

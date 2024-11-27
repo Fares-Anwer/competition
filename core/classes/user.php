@@ -548,7 +548,7 @@ class User
     return $stmt->fetchAll();
   }
 
-  public function selectAllProducts1($start_from, $per_page)
+  public function selectAllevents1($start_from, $per_page)
   {
     $sql = "SELECT * FROM events ORDER BY 1 DESC LIMIT $start_from, $per_page ";
     $stmt = $this->pdo->prepare($sql);
@@ -556,7 +556,7 @@ class User
     return $stmt->fetchAll();
   }
 
-  public function selectAllProducts($conditions)
+  public function selectAllevents($conditions)
   {
     $sql = "SELECT * FROM events $conditions ";
     $stmt = $this->pdo->prepare($sql);
@@ -797,7 +797,7 @@ class User
 
 
 
-  public function select_random_products()
+  public function select_random_events()
   {
     $sql = "SELECT * FROM events ORDER BY rand() LIMIT 0, 4";
     $stmt = $this->pdo->prepare($sql);

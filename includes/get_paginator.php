@@ -19,7 +19,7 @@ if (isset($_REQUEST['man']) && is_array($_REQUEST['man'])) {
 }
 
 // / Manufacturers Code Ends ///
-// / Products Categories Code Starts ///
+// / events Categories Code Starts ///
 
 if (isset($_REQUEST['p_cat']) && is_array($_REQUEST['p_cat'])) {
 	foreach ($_REQUEST['p_cat'] as $sKey => $sVal) {
@@ -30,7 +30,7 @@ if (isset($_REQUEST['p_cat']) && is_array($_REQUEST['p_cat'])) {
 	}
 }
 
-// / Products Categories Code Ends ///
+// / events Categories Code Ends ///
 // / Categories Code Starts ///
 
 if (isset($_REQUEST['cat']) && is_array($_REQUEST['cat'])) {
@@ -46,7 +46,7 @@ if (isset($_REQUEST['cat']) && is_array($_REQUEST['cat'])) {
 
 $sWhere = (count($aWhere) > 0 ? ' WHERE ' . implode(' or ', $aWhere) : '');
 
-$result = $getFromU->selectAllProducts($sWhere);
+$result = $getFromU->selectAllevents($sWhere);
 
 $total_records = count($result);
 $total_pages = ceil($total_records / $per_page);

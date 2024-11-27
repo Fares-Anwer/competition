@@ -8,7 +8,7 @@ if (isset($_GET['c_id'])) {
 	$status = "pending";
 	$invoice_no = mt_rand();
 
-	$select_carts = $getFromU->select_products_by_ip($ip_add);
+	$select_carts = $getFromU->select_events_by_ip($ip_add);
 	foreach ($select_carts as $select_cart) {
 		$product_id = $select_cart->p_id;
 		$product_qty = $select_cart->qty;

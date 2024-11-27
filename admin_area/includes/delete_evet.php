@@ -11,7 +11,7 @@ if (isset($_GET['product_id'])) {
 	$stmt->bindParam(":product_id", $product_id);
 	if ($stmt->execute()) {
 		$_SESSION['delete_product_msg'] = "Product has been Deleted Successfully";
-		header('Location: ../index.php?view_products');
+		header('Location: ../index.php?view_events');
 	}
 }
 ?>
