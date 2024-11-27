@@ -24,13 +24,13 @@ if (!isset($_SESSION['admin_email'])) {
       } elseif (isset($_GET['user_profile'])) {
         require_once 'includes/user_profile.php';
       } elseif (isset($_GET['add_enevt'])) {
-        require_once 'includes/insert_enevts.php';
+        require_once 'includes/add_enevts.php';
       } elseif (isset($_GET['view_enevts'])) {
         require_once 'includes/view_enevts.php';
       } elseif (isset($_GET['Unapprove_enevt'])) {
         require_once 'includes/Unapprove_enevt.php';
-      } elseif (isset($_GET['edit_enevt'])) {
-        require_once 'includes/edit_enevt.php';
+      } elseif (isset($_GET['edit_enevts'])) {
+        require_once 'includes/edit_enevts.php';
       } elseif (isset($_GET['add_p_cat'])) {
         require_once 'includes/insert_enevt_cat.php';
       } elseif (isset($_GET['view_p_cats'])) {
