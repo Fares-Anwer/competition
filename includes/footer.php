@@ -20,30 +20,14 @@
 				</ul>
 			</div>
 
-			<!-- Top Pro Categories -->
-			<div class="col-sm-6 col-md-3 mb-4">
-				<h4 class="text-uppercase">Top Pro Categories</h4>
-				<ul class="list-unstyled">
-					<?php
-					$product_cats = $getFromU->viewAllFromTable("categories");
-					foreach ($product_cats as $product_cat) {
-						$cat_id = $product_cat->cat_id;
-						$p_cat_title = $product_cat->cat_title;
-					?>
-						<li><a href="shop.php?cat_id=<?php echo $cat_id; ?>" class="text-light"><?php echo $p_cat_title; ?></a></li>
-					<?php } ?>
-				</ul>
-			</div>
-
 			<!-- Where we are -->
 			<div class="col-sm-6 col-md-3 mb-4">
 				<h4 class="text-uppercase">Where we Are?</h4>
 				<address class="text-light">
-					<strong>Prince</strong><br>
-					,Sultan Street <br>
-					, Medina,Saudi Arabia <br><br>
-					<i class="fas fa-phone-square"></i><span class="sr-only">Telephone:</span> <a href="#" class="text-light">+966 12 345 6789</a><br>
-					<i class="fas fa-envelope"></i><span class="sr-only">Mail:</span> <a href="info@artforall.com" class="text-light">info@artforall.com</a>
+					<strong>sanaa</strong><br>
+					, sanaa university <br><br>
+					<i class="fas fa-phone-square"></i><span class="sr-only">Telephone:</span> <a href="#" class="text-light">+967 777 777 777</a><br>
+					<i class="fas fa-envelope"></i><span class="sr-only">Mail:</span> <a href="info@artforall.com" class="text-light">su.edu.ye</a>
 				</address>
 				<a href="contact.php" class="text-light">Go to Contact Us Page</a>
 			</div>
@@ -77,7 +61,7 @@
 <!-- Copyright Section -->
 <div id="copyright" class="bg-dark text-light py-3">
 	<div class="container text-center">
-		<p>&copy; 2024 Taibah University</p>
+		<p>&copy; 2024 sanaa University</p>
 	</div>
 </div>
 
