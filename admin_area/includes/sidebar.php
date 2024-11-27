@@ -9,10 +9,10 @@ $admin_image = $get_admin->admin_image;
 
 $dashboard = (isset($_GET['dashboard'])) ? 'active' : '';
 
-$events = (isset($_GET['add_event']) || isset($_GET['view_events']) || isset($_GET['edit_event']) || isset($_GET['Unapprove_product'])) ? 'active' : '';
+$events = (isset($_GET['add_event']) || isset($_GET['view_events']) || isset($_GET['edit_event']) || isset($_GET['Unapprove_enevtoduct'])) ? 'active' : '';
 $add_event = (isset($_GET['add_event'])) ? 'active' : '';
 $view_events = (isset($_GET['view_events'])) ? 'active' : '';
-$unapprove_product = (isset($_GET['Unapprove_product'])) ? 'active' : '';
+$Unapprove_enevtoduct = (isset($_GET['Unapprove_enevtoduct'])) ? 'active' : '';
 
 
 
@@ -85,7 +85,7 @@ $view_enquiry_types = (isset($_GET['view_enquiry_types'])) ? 'active' : '';
                         <a class="<?php echo $view_events; ?>" href="index.php?view_events"><i class="fas fa-eye"></i> View Approve events</a>
                     </li>
                     <li>
-                        <a class="<?php echo $unapprove_product; ?>" href="index.php?Unapprove_product"><i class="fas fa-eye-slash"></i> View Unapprove events</a>
+                        <a class="<?php echo $Unapprove_enevtoduct; ?>" href="index.php?Unapprove_enevtoduct"><i class="fas fa-eye-slash"></i> View Unapprove events</a>
                     </li>
                 </ul>
             </li>

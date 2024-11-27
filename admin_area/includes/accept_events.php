@@ -18,11 +18,11 @@ if (isset($_GET['product_id'])) {
         $_SESSION['status_update_msg'] = "Product status has been updated to active (1) successfully!";
 
         // إعادة توجيه المستخدم إلى الصفحة الرئيسية مع عرض المنتجات
-        header('Location: ../index.php?Unapprove_product');
+        header('Location: ../index.php?Unapprove_enevt');
     } else {
         // رسالة خطأ في حال فشل التحديث
         $_SESSION['status_update_msg'] = "Failed to update product status!";
-        header('Location: ../index.php?Unapprove_product');
+        header('Location: ../index.php?Unapprove_enevt');
     }
 }
 ?>
