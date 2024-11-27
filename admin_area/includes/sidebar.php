@@ -9,7 +9,7 @@ $admin_image = $get_admin->admin_image;
 
 $dashboard = (isset($_GET['dashboard'])) ? 'active' : '';
 
-$events = (isset($_GET['add_event']) || isset($_GET['view_events']) || isset($_GET['edit_product']) || isset($_GET['Unapprove_product'])) ? 'active' : '';
+$events = (isset($_GET['add_event']) || isset($_GET['view_events']) || isset($_GET['edit_event']) || isset($_GET['Unapprove_product'])) ? 'active' : '';
 $add_event = (isset($_GET['add_event'])) ? 'active' : '';
 $view_events = (isset($_GET['view_events'])) ? 'active' : '';
 $unapprove_product = (isset($_GET['Unapprove_product'])) ? 'active' : '';
