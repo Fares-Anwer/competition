@@ -33,12 +33,6 @@ $total = 0;
 							<li><a href="customer_register.php">Register</a></li>
 						<?php endif ?>
 
-						<?php if (!isset($_SESSION['customer_email'])): ?>
-							<li><a href="checkout.php">My Account</a></li>
-						<?php else: ?>
-							<li><a href="customer/my_account.php?my_orders">My Account</a></li>
-						<?php endif ?>
-
 						<li><a href="cart.php">Go To Cart</a></li>
 						<li>
 							<?php if (!isset($_SESSION['customer_email'])): ?>
@@ -68,16 +62,6 @@ $total = 0;
 					<a href="index.php">Home</a>
 				</li>
 
-
-				<?php if (!isset($_SESSION['customer_email'])): ?>
-					<li><a href="checkout.php">My Account</a></li>
-				<?php else: ?>
-					<li><a href="customer/my_account.php?my_orders">My Account</a></li>
-				<?php endif ?>
-
-				<li>
-					<a class="active" href="cart.php">Shopping Cart</a>
-				</li>
 				<li>
 					<a href="contact.php">Contact Us</a>
 				</li>
@@ -114,7 +98,6 @@ $total = 0;
 				<div class="col-md-9">
 					<div class="card mb-3">
 						<div class="card-body">
-							<h5 class="card-title">Shopping Cart</h5>
 							<form method="post" action="cart.php" enctype="multipart/form-data">
 								<div class="table-responsive mb-3">
 									<table class="table table-bordered table-hover text-center">
