@@ -36,9 +36,7 @@ if (isset($_POST['add_to_wishlist'])) {
 			<li>
 				<a class="nav-link text-light" href="index.php">Home </a>
 			</li>
-			<li>
-				<a class="nav-link text-light" href="shop.php">Marketplace</a>
-			</li>
+
 			<?php if (isset($_SESSION['customer_email'])): ?>
 				<li><a class="nav-link text-light" href="customer/my_account.php?my_orders">My Account</a></li>
 			<?php else: ?>
@@ -112,18 +110,6 @@ if (isset($_POST['add_to_wishlist'])) {
 
 			?>
 
-
-
-
-						<div class="col-md-12">
-							<nav aria-label="breadcrumb">
-								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index.php">Home</a></li>
-									<li class="breadcrumb-item"><a href="shop.php">Marketplace</a></li>
-									<li class="breadcrumb-item" aria-current="page"><?php echo $product_title; ?></li>
-								</ol>
-							</nav>
-						</div>
 
 
 						<?php if (isset($error)) : ?>
