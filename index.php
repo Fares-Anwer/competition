@@ -200,17 +200,12 @@
 			$product_title     = $getProduct->product_title;
 			$product_price     = $getProduct->product_price;
 			$product_img1      = $getProduct->product_img1;
-			$product_label     = $getProduct->product_label;
 			$product_psp_price = $getProduct->product_psp_price;
 			$customer_id = $getProduct->customer_id;
+			$product_price = "<del>$$product_price</del>";
+			$product_psp_price = "<i class='fas fa-long-arrow-alt-right'></i> $$product_psp_price";
+			$product_price = "$$product_price";
 
-			if ($product_label == "Sale" || $product_label == "Gift") {
-				$product_price = "<del>$$product_price</del>";
-				$product_psp_price = "<i class='fas fa-long-arrow-alt-right'></i> $$product_psp_price";
-			} else {
-				$product_price = "$$product_price";
-				$product_psp_price = "";
-			}
 			$view_customer = $getFromU->view_customer_by_id($customer_id);
 			@$the_customer_name = $view_customer->customer_name;
 			if ($the_customer_name == NULL) {
