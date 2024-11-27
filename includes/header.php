@@ -42,14 +42,14 @@
 					<object type="image/svg+xml" data="includes/logo2.svg" style="direction:abslute;" class="logo"></object>
 					<a href="customer/my_account.php" class="btn btn-info btn-sm">
 						<?php
-						if (!isset($_SESSION['customer_email'])) {
-							echo 'Welcome : Guest';
-						} else {
-							$customer = $getFromU->view_customer_by_email($_SESSION['customer_email']);
-							@$customer_name = $customer->customer_name;
-							@$customer_disability = $customer->is_artist;
-							echo "Welcome <strong class='text-uppercase'>$customer_name</strong>";
-						}
+						// if (!isset($_SESSION['customer_email'])) {
+						// 	echo 'Welcome : Guest';
+						// } else {
+						// 	$customer = $getFromU->view_customer_by_email($_SESSION['customer_email']);
+						// 	@$customer_name = $customer->customer_name;
+						// 	@$customer_disability = $customer->is_artist;
+						// 	echo "Welcome <strong class='text-uppercase'>$customer_name</strong>";
+						// }
 						?>
 					</a>
 

@@ -781,16 +781,7 @@ class User
   }
 
 
-  public function count_product_by_ip($ip_add)
-  {
-    $sql = "SELECT * FROM cart WHERE ip_add = :ip_add";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->bindParam(":ip_add", $ip_add);
-    $stmt->execute();
-    $stmt->fetch();
-    $count = $stmt->rowCount();
-    return $count;
-  }
+
 
 
   public function count_product_by_status($order_status)

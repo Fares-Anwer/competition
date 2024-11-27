@@ -30,7 +30,6 @@
 			</li>
 		</ul>
 
-		<a href="cart.php" class="btn btn-warning ms-3"><i class="fas fa-shopping-cart"></i><span> <?php echo $getFromU->count_product_by_ip($ip_add); ?> items in Cart</span></a>
 
 		<!-- Search Form -->
 		<form class="d-flex ms-3" role="search">
