@@ -3,11 +3,8 @@
 $get_products = $getFromU->viewAllFromTable("events");
 $count_products = count($get_products);
 
-$get_customers = $getFromU->viewAllFromTable("customers");
-$count_customers = count($get_customers);
-
-$get_product_categories = $getFromU->viewAllFromTable("categories");
-$count_product_categories = count($get_product_categories);
+$get_users = $getFromU->viewAllFromTable("users");
+$count_users = count($get_users);
 
 $get_pending_orders = $getFromU->viewAllFromTableWhereOrderStatus("pending_orders", "pending");
 $count_pending_orders = count($get_pending_orders);
@@ -50,8 +47,8 @@ $count_pending_orders = count($get_pending_orders);
     <div class="col-lg-3 col-md-6">
       <div class="ibox bg-success color-white widget-stat rounded">
         <div class="ibox-body">
-          <h2 class="m-b-5 font-strong"><?php echo $count_customers; ?></h2>
-          <div class="m-b-5">CUSTOMERS</div><a class="text-white" href="index.php?view_customers"><i class="fas fa-users widget-stat-icon"></i></a>
+          <h2 class="m-b-5 font-strong"><?php echo $count_users; ?></h2>
+          <div class="m-b-5">users</div><a class="text-white" href="index.php?view_users"><i class="fas fa-users widget-stat-icon"></i></a>
           <div><i class="fa fa-level-up m-r-5"></i><small>25% Higher</small></div>
         </div>
       </div>

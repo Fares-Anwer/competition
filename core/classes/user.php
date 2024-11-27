@@ -32,7 +32,7 @@ class User
   public function login($customer_email, $customer_pass)
   {
     //$password = md5($password);
-    $sql = "SELECT * FROM customers WHERE customer_email = :customer_email AND customer_pass = :customer_pass";
+    $sql = "SELECT * FROM users WHERE customer_email = :customer_email AND customer_pass = :customer_pass";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindParam(":customer_email", $customer_email, PDO::PARAM_STR);
     $stmt->bindParam(":customer_pass", $customer_pass);
@@ -86,7 +86,7 @@ class User
 
   public function check_customer_by_email($customer_email)
   {
-    $sql = "SELECT * FROM customers WHERE customer_email = :customer_email";
+    $sql = "SELECT * FROM users WHERE customer_email = :customer_email";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindParam(":customer_email", $customer_email);
     $stmt->execute();
@@ -116,7 +116,7 @@ class User
 
   public function check_old_pass_by_email($customer_pass, $customer_email)
   {
-    $sql = "SELECT * FROM customers WHERE customer_pass = :customer_pass AND customer_email = :customer_email";
+    $sql = "SELECT * FROM users WHERE customer_pass = :customer_pass AND customer_email = :customer_email";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindParam(":customer_pass", $customer_pass);
     $stmt->bindParam(":customer_email", $customer_email);
@@ -148,7 +148,7 @@ class User
 
   public function view_customer_by_email($customer_email)
   {
-    $sql = "SELECT * FROM customers WHERE customer_email = :customer_email";
+    $sql = "SELECT * FROM users WHERE customer_email = :customer_email";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindParam(":customer_email", $customer_email);
     $stmt->execute();
@@ -166,7 +166,7 @@ class User
 
   public function view_customer_by_id($customer_id)
   {
-    $sql = "SELECT * FROM customers WHERE customer_id = :customer_id";
+    $sql = "SELECT * FROM users WHERE customer_id = :customer_id";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindParam(":customer_id", $customer_id);
     $stmt->execute();
@@ -330,7 +330,7 @@ class User
 
   public function update_customer_password($customer_id, $customer_pass)
   {
-    $sql = "UPDATE customers SET customer_pass = :customer_pass WHERE customer_id = :customer_id";
+    $sql = "UPDATE users SET customer_pass = :customer_pass WHERE customer_id = :customer_id";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindParam(":customer_pass", $customer_pass);
     $stmt->bindParam(":customer_id", $customer_id);
@@ -344,7 +344,7 @@ class User
 
   public function update_customer_confirm_code($customer_confirm_code)
   {
-    $sql = "UPDATE customers SET customer_confirm_code = '' WHERE customer_confirm_code = :customer_confirm_code";
+    $sql = "UPDATE users SET customer_confirm_code = '' WHERE customer_confirm_code = :customer_confirm_code";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindParam(":customer_confirm_code", $customer_confirm_code);
 
@@ -463,7 +463,7 @@ class User
 
   public function selectTopManufacturer()
   {
-    $sql = "SELECT * FROM customers WHERE manufacturer_top = 'Yes' ";
+    $sql = "SELECT * FROM users WHERE manufacturer_top = 'Yes' ";
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll();
@@ -471,7 +471,7 @@ class User
 
   public function selectNonTopManufacturer()
   {
-    $sql = "SELECT * FROM customers WHERE manufacturer_top = 'No' ";
+    $sql = "SELECT * FROM users WHERE manufacturer_top = 'No' ";
     $stmt = $this->pdo->prepare($sql);
     $stmt->execute();
     return $stmt->fetchAll();
@@ -1227,7 +1227,7 @@ class User
 
   public function delete_customer($customer_email)
   {
-    $sql =  "DELETE FROM customers WHERE customer_email = :customer_email";
+    $sql =  "DELETE FROM users WHERE customer_email = :customer_email";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindParam(":customer_email", $customer_email);
 

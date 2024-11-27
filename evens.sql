@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `event` (
   `enent_id` int(10) NOT NULL,
-  `event_name` text NOT NULL,
+  `enevt_title` text NOT NULL,
   `enevt_date` text NOT NULL,
   `event_time` text NOT NULL,
   `event_location` int(11) NOT NULL,

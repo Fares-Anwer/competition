@@ -23,7 +23,7 @@ $slides = (isset($_GET['add_slide']) || isset($_GET['view_slides']) || isset($_G
 $add_slide = (isset($_GET['add_slide'])) ? 'active' : '';
 $view_slides = (isset($_GET['view_slides'])) ? 'active' : '';
 
-$view_customers = (isset($_GET['view_customers'])) ? 'active' : '';
+$view_users = (isset($_GET['view_users'])) ? 'active' : '';
 
 $view_orders = (isset($_GET['view_orders'])) ? 'active' : '';
 
@@ -149,9 +149,9 @@ $view_enquiry_types = (isset($_GET['view_enquiry_types'])) ? 'active' : '';
                     </li>
                 </ul>
             </li>
-            <li class="<?php echo $view_customers; ?>">
-                <a href="index.php?view_customers"><i class="sidebar-item-icon fas fa-users"></i>
-                    <span class="nav-label">View Customers</span>
+            <li class="<?php echo $view_users; ?>">
+                <a href="index.php?view_users"><i class="sidebar-item-icon fas fa-users"></i>
+                    <span class="nav-label">View users</span>
                 </a>
             </li>
             <li class="<?php echo $view_orders; ?>">

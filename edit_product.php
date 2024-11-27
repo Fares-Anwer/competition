@@ -100,8 +100,8 @@ echo $customer_id;
 							<select name="customer_id" id="manufacturer_id" class="form-control" required>
 								<option value="<?php echo $manufacturer_id; ?>"><?php echo $the_manufacturer_title; ?></option>
 								<?php
-								$customers = $getFromU->viewAllFromTable("customers");
-								foreach ($customers as $customer) {
+								$users = $getFromU->viewAllFromTable("users");
+								foreach ($users as $customer) {
 									$customer_id = $customer->customer_id;
 									$customer_name = $customer->customer_name;
 									if ($manufacturer_title == $the_customer_id) {
