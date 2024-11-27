@@ -1,22 +1,5 @@
 <?php require_once('core/init.php'); ?>
 
-<?php
-$ip_add = $getFromU->getRealUserIp();
-$total = 0;
-$records = $getFromU->select_products_by_ip($ip_add);
-foreach ($records as $record) {
-	$product_id = $record->p_id;
-	$product_price = $record->product_price;
-	$product_qty = $record->qty;
-	$get_prices = $getFromU->viewProductByProductID($product_id);
-	foreach ($get_prices as $get_price) {
-		$sub_total = $product_price * $product_qty;
-		$total += $sub_total;
-	}
-}
-// $customers = $getFromU->view_customer_by_email($_SESSION['customer_email']);
-// $customer_disability = $customers->$is_artist;
-?>
 
 <!DOCTYPE html>
 <html lang="en">

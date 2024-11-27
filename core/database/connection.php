@@ -3,7 +3,7 @@
 $host = "localhost";
 $user = "root";
 $password = "";
-$dbname = "ecom_store";
+$dbname = "evens";
 
 $dsn = "mysql:host=" . $host . "; dbname=" . $dbname;
 

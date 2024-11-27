@@ -9,4 +9,4 @@ session_start();
 
 $getFromU = new User($pdo);
 
-define('BASE_URL', 'http://localhost/Art-For-All/');
+define('BASE_URL', 'http://localhost/competition/');

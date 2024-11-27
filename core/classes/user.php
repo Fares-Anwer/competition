@@ -805,14 +805,6 @@ class User
   }
 
 
-  public function select_products_by_ip($ip_add)
-  {
-    $sql = "SELECT * FROM cart WHERE ip_add = :ip_add";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->bindParam(":ip_add", $ip_add);
-    $stmt->execute();
-    return $stmt->fetchAll();
-  }
 
   public function select_random_products()
   {
