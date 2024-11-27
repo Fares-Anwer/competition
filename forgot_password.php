@@ -49,9 +49,7 @@ if (isset($_POST['forget_password_link'])) {
 			<li>
 				<a class="nav-link text-light" href="index.php">Home </a>
 			</li>
-			<li>
-				<a class="nav-link text-light" href="shop.php">Marketplace</a>
-			</li>
+
 			<?php if (isset($_SESSION['customer_email'])): ?>
 				<li><a class="nav-link text-light" href="customer/my_account.php?my_orders">My Account</a></li>
 			<?php else: ?>
