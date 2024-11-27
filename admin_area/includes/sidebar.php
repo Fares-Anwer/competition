@@ -15,9 +15,6 @@ $view_events = (isset($_GET['view_events'])) ? 'active' : '';
 $unapprove_product = (isset($_GET['Unapprove_product'])) ? 'active' : '';
 
 
-$cats = (isset($_GET['add_cat']) || isset($_GET['view_cats']) || isset($_GET['edit_cat'])) ? 'active' : '';
-$add_cat = (isset($_GET['add_cat'])) ? 'active' : '';
-$view_cats = (isset($_GET['view_cats'])) ? 'active' : '';
 
 $slides = (isset($_GET['add_slide']) || isset($_GET['view_slides']) || isset($_GET['edit_slide'])) ? 'active' : '';
 $add_slide = (isset($_GET['add_slide'])) ? 'active' : '';
