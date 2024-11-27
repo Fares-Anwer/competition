@@ -473,29 +473,6 @@ class User
 
 
 
-  public function selectNonTopProductCatagories()
-  {
-    $sql = "SELECT * FROM categories WHERE cat_top = 'No' ";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->execute();
-    return $stmt->fetchAll();
-  }
-
-  public function selectTopCatagories()
-  {
-    $sql = "SELECT * FROM categories WHERE cat_top = 'Yes' ";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->execute();
-    return $stmt->fetchAll();
-  }
-
-  public function selectNonTopCatagories()
-  {
-    $sql = "SELECT * FROM categories WHERE cat_top = 'No' ";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->execute();
-    return $stmt->fetchAll();
-  }
 
   public function selectBoxByBoxID($box_id)
   {
@@ -507,14 +484,6 @@ class User
     return $stmt->fetch();
   }
 
-  public function selectManufacturerByManufacturerID($manufacturer_id)
-  {
-    $sql = "SELECT * FROM manufacturers WHERE manufacturer_id = :manufacturer_id";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->bindParam(":manufacturer_id", $manufacturer_id);
-    $stmt->execute();
-    return $stmt->fetch();
-  }
 
 
   public function selectTermsByTermID($term_id)
@@ -664,35 +633,7 @@ class User
     return $count;
   }
 
-  public function viewAllByCatID($cat_id)
-  {
-    $sql = "SELECT * FROM categories WHERE cat_id = :cat_id ";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->bindParam(":cat_id", $cat_id);
-    $stmt->execute();
 
-    return $stmt->fetchAll();
-  }
-
-  public function view_All_By_cat_ID($cat_id)
-  {
-    $sql = "SELECT * FROM categories WHERE cat_id = :cat_id ";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->bindParam(":cat_id", $cat_id);
-    $stmt->execute();
-
-    return $stmt->fetch();
-  }
-
-  public function view_All_By_Manufacturer_ID($manufacturer_id)
-  {
-    $sql = "SELECT * FROM manufacturers WHERE manufacturer_id = :manufacturer_id ";
-    $stmt = $this->pdo->prepare($sql);
-    $stmt->bindParam(":manufacturer_id", $manufacturer_id);
-    $stmt->execute();
-
-    return $stmt->fetch();
-  }
 
   public function viewProductByCatID($cat_id)
   {

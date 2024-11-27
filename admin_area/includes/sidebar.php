@@ -9,8 +9,8 @@ $admin_image = $get_admin->admin_image;
 
 $dashboard = (isset($_GET['dashboard'])) ? 'active' : '';
 
-$events = (isset($_GET['add_product']) || isset($_GET['view_events']) || isset($_GET['edit_product']) || isset($_GET['Unapprove_product'])) ? 'active' : '';
-$add_product = (isset($_GET['add_product'])) ? 'active' : '';
+$events = (isset($_GET['add_event']) || isset($_GET['view_events']) || isset($_GET['edit_product']) || isset($_GET['Unapprove_product'])) ? 'active' : '';
+$add_event = (isset($_GET['add_event'])) ? 'active' : '';
 $view_events = (isset($_GET['view_events'])) ? 'active' : '';
 $unapprove_product = (isset($_GET['Unapprove_product'])) ? 'active' : '';
 
@@ -82,7 +82,7 @@ $view_enquiry_types = (isset($_GET['view_enquiry_types'])) ? 'active' : '';
                 </a>
                 <ul class="nav-2-level collapse">
                     <li>
-                        <a class="<?php echo $add_product; ?>" href="index.php?add_product"><i class="fas fa-plus-circle"></i> Insert Product</a>
+                        <a class="<?php echo $add_event; ?>" href="index.php?add_event"><i class="fas fa-plus-circle"></i> Insert event</a>
                     </li>
                     <li>
                         <a class="<?php echo $view_events; ?>" href="index.php?view_events"><i class="fas fa-eye"></i> View Approve events</a>

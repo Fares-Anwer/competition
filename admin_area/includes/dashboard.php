@@ -60,15 +60,7 @@ $count_users = count($get_users);
         </div>
       </div>
     </div>
-    <div class="col-lg-3 col-md-6">
-      <div class="ibox bg-warning color-white widget-stat rounded">
-        <div class="ibox-body">
-          <h2 class="m-b-5 font-strong"><?php echo $count_product_categories; ?></h2>
-          <div class="m-b-5">CATEGORIES</div><a class="text-white" href="index.php?view_cats"><i class="fas fa-list-ul widget-stat-icon"></i></a>
-          <div><i class="fa fa-level-up m-r-5"></i><small>22% higher</small></div>
-        </div>
-      </div>
-    </div>
+
     <div class="col-lg-3 col-md-6">
 
     </div>
